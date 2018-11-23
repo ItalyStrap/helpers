@@ -4,9 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/italystrap/helpers/v/stable)](https://packagist.org/packages/italystrap/helpers)
 
 
-Breadcrumbs Class API for WordPress
-
-This package create an HTML or Json Breadcrumbs elements to display on your WordPress site
+Helpers API for ItalyStrap
 
 ## Installation
 
@@ -16,7 +14,7 @@ Add the package to your projects `composer.json` file. Visit [getcomposer.org](h
 
 
 ```shell
-composer require illuminated/helper-functions
+composer require italystrap/helpers --save
 ```
 
 or
@@ -24,7 +22,7 @@ or
 ```json
 {
     "require": {
-        "italystrap/breadcrumbs": "dev-master"
+        "italystrap/helpers": "dev-master"
     }
 }
 ```
@@ -34,13 +32,13 @@ or
 Download and include the class file into your theme/plugin:
 
 ```php
-include_once 'path/to/ItalyStrap/Breadcrumbs.php';
+include_once 'path/to/ItalyStrap/autoload.php';
 ```
 
 ## Available functions
 
 * [HTML](#html)
-	* [get_attr](#array_except_value)
+	* [get_attr](#ItalyStrapHTMLget_attr())
 
 ## HTML
 
