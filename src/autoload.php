@@ -2,6 +2,7 @@
 
 $files = [
 	'html.php',
+    'array.php',
 ];
 
 foreach ( $files as $file ) {

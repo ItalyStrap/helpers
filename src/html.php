@@ -14,14 +14,14 @@ if ( ! function_exists( 'ItalyStrap\HTML\get_attr' ) ) {
 	 * @see In general-function on the plugin.
 	 *
 	 * @param  string $context    The context, to build filter name.
-	 * @param  array  $attributes Optional. Extra attributes to merge with defaults.
+	 * @param  array  $attr Optional. Extra attributes to merge with defaults.
 	 * @param  bool   $echo       True for echoing or false for returning the value.
 	 *                            Default false.
 	 * @param  null   $args       Optional. Extra arguments in case is needed.
 	 *
-	 * @return string String of HTML attributes and values.
+	 * @return string|void String of HTML attributes and values.
 	 */
-	function get_attr( $context, array $attr = array(), $echo = false, $args = null ) {
+	function get_attr( string $context, array $attr = [], $echo = false, $args = null ) {
 
 		$html = '';
 
@@ -34,7 +34,7 @@ if ( ! function_exists( 'ItalyStrap\HTML\get_attr' ) ) {
 		 *
 		 * @var array
 		 */
-		$attr = (array) apply_filters( "italystrap_{$context}_attr", $attr, $context, $args );
+		$attr = (array) \apply_filters( "italystrap_{$context}_attr", $attr, $context, $args );
 
 		foreach ( $attr as $key => $value ) {
 
@@ -44,13 +44,13 @@ if ( ! function_exists( 'ItalyStrap\HTML\get_attr' ) ) {
 
 			if ( true === $value ) {
 
-				$html .= ' ' . esc_html( $key );
+				$html .= ' ' . \esc_html( $key );
 			} else {
 
-				$html .= sprintf(
+				$html .= \sprintf(
 					' %s="%s"',
-					esc_html( $key ),
-					( 'href' === $key ) ? esc_url( $value ) : esc_attr( $value )
+					\esc_html( $key ),
+					\trim( 'href' === $key ? \esc_url( $value ) : \esc_attr( $value ) )
 				);
 			}
 		}
@@ -65,7 +65,7 @@ if ( ! function_exists( 'ItalyStrap\HTML\get_attr' ) ) {
 		 *
 		 * @var string
 		 */
-		$html = apply_filters( "italystrap_attr_{$context}_output", $html, $attr, $context, $args );
+		$html = (string) apply_filters( "italystrap_attr_{$context}_output", $html, $attr, $context, $args );
 
 		if ( ! $echo ) {
 			return $html;
@@ -84,7 +84,7 @@ if ( ! function_exists( 'ItalyStrap\HTML\is_HTML' ) ) {
 	 *
 	 * @return bool
 	 */
-	function is_HTML( $string ) {
-		return $string !== strip_tags( $string );
+	function is_HTML( string $string ): bool {
+		return $string !== \strip_tags( $string );
 	}
 }
