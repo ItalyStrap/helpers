@@ -44,38 +44,19 @@ include_once 'path/to/ItalyStrap/autoload.php';
 
 ### `ItalyStrap\HTML\get_attr()`
 
-Build list of attributes into a string and apply contextual filter on string:
 
-```php
+## Contributing
 
-$attr = [
-	'id'	=> 'unique_id',
-	'class'	=> 'some_class',
-];
+All feedback / bug reports / pull requests are welcome.
 
-$output = get_attr( $context, $attr, false );
+## License
 
-// id="unique_id" class="some_class"
+Copyright (c) 2019 Enea Overclokk, ItalyStrap
 
-printf(
-	'<span%s>Title</span>',
-	$output
-);
-```
-
-or
-
-```html
-<span<?php get_attr( $context, $attr, true ) ?>>Title</span>
-```
-
-```php
-// <span id="unique_id" class="some_class">Title</span>
-```
+This code is licensed under the [MIT](LICENSE).
 
 ## Notes
 
-*  Licensed under the [GNU General Public License v2.0](https://github.com/ItalyStrap/breadcrumbs/blob/master/LICENSE)
 *  Maintained under the [Semantic Versioning Guide](http://semver.org)
 
 ## Author

@@ -3,17 +3,19 @@
     "description": "ItalyStrap Helpers",
     "type": "library",
     "keywords": ["WordPress", "ItalyStrap", "helpers", "functions", "collection"],
-    "license": "GPL-2.0-or-later",
+    "license": "MIT",
     "authors": [
         {
             "name": "overclokk",
-            "email": "info@overclokk.net"
+            "email": "info@overclokk.net",
+            "homepage": "https://www.italystrap.com",
+            "role": "Developer"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "files": ["src/autoload.php"]
     },
-    "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
         "italystrap/html": "^1.1.0"
