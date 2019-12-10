@@ -1,7 +1,6 @@
 <?php
 
 $files = [
-//	'html.php',
     'array.php',
 ];
 
